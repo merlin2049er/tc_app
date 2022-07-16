@@ -12,12 +12,7 @@
 
 <p>
   <strong>Authored:</strong>
-  <%= @testcase.authored %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @testcase.email %>
+  <%= mail_to @testcase.authored, @testcase.email  %>
 </p>
 
 <p>
@@ -30,8 +25,10 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Module</th>
+      <th>Case</th>
       <th>Description</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -39,7 +36,10 @@
     <% @testgroup.each do |tg| %>
       <tr>
         <td> <%= tg.title  %></td>
+        <td> <%= tg.case %> </td>
         <td> <%= tg.description %></td>
+        <td> <%= link_to 'Edit', edit_testgroup_path(tg.id) %> | <%= link_to 'Show', testgroup_path(tg.id) %> </td>
+
 
       </tr>
     <% end %>

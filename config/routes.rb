@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :testresults
   resources :testgroups
   resources :testcases
   root to: 'home#index'

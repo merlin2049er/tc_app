@@ -6,14 +6,39 @@
 </p>
 
 <p>
+  <strong>Test Case:</strong>
+  <%= @testgroup.case %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @testgroup.description %>
 </p>
 
 <p>
-  <strong>Testcase:</strong>
-  <%= @testgroup.testcase %>
+  <strong>Steps:</strong>
+  <%= simple_format(@testgroup.steps) %>
 </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Result</th>
+      <th>Pass</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |r| %>
+      <tr>
+        <td> <%= r.result  %></td>
+        <td> <%= r.pass %> </td>
+        <td> <%= r.comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_testgroup_path(@testgroup) %> |
 <%= link_to 'Back', testgroups_path %>

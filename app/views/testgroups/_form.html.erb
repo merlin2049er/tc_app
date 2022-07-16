@@ -22,8 +22,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :case %>
+    <%= form.number_field :case %>
+  </div>
+
+  <div class="field">
     <%= form.label :testcase %>
     <%= form.number_field :testcase %>
+  </div>
+
+  <div class="field">
+    <%= form.label :steps %>
+    <%= form.text_area :steps %>
   </div>
 
   <div class="actions">
