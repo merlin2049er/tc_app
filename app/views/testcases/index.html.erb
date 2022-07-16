@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Testcases</h1>
+<h1>Test cases</h1>
 
 <table>
   <thead>
@@ -10,6 +10,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Authored</th>
+      <th>Action</th>
 
 
       <th colspan="3"></th>
@@ -26,9 +27,9 @@
         <td><%=  mail_to  testcase.authored, testcase.email %></td>
 
 
-        <td><%= link_to 'Show', testcase %></td>
-        <td><%= link_to 'Edit', edit_testcase_path(testcase) %></td>
-        <td><%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', testcase %> |
+        <%= link_to 'Edit', edit_testcase_path(testcase) %> |
+        <%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
