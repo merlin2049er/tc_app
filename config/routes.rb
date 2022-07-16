@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :testgroups
+  resources :testcases
   root to: 'home#index'
 
   devise_for :users,

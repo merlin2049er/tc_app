@@ -1,0 +1,2 @@
+class Testgroup < ApplicationRecord
+end
