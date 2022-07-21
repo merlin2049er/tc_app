@@ -67,6 +67,6 @@ class TestgroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def testgroup_params
-      params.require(:testgroup).permit(:title, :description, :case, :steps ,:testcase)
+      params.require(:testgroup).permit(:title, :description, :case, :steps ,:testcase_id)
     end
 end

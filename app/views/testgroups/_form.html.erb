@@ -12,7 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :testcase %>
+    <%= form.number_field :testcase_id , :readonly => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :module %>
     <%= form.text_field :title %>
   </div>
 
@@ -26,10 +31,7 @@
     <%= form.number_field :case %>
   </div>
 
-  <div class="field">
-    <%= form.label :testcase %>
-    <%= form.number_field :testcase %>
-  </div>
+
 
   <div class="field">
     <%= form.label :steps %>

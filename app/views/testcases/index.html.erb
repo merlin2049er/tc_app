@@ -1,10 +1,12 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Test cases</h1>
 
-<table>
+<table >
   <thead>
     <tr>
+      <th>Id</th>
       <th>Date</th>
       <th>Version</th>
       <th>Title</th>
@@ -20,6 +22,7 @@
   <tbody>
     <% @testcases.each do |testcase| %>
       <tr>
+        <td><%= testcase.id %> </td>
         <td><%= testcase.created_at.strftime("%F") %></td>
         <td><%= testcase.version %></td>
         <td><%= testcase.title %></td>

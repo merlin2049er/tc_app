@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Id:</strong>
+  <%= @testcase.id %>
+</p>
+<p>
   <strong>Title:</strong>
   <%= @testcase.title %>
 </p>
@@ -47,5 +51,6 @@
 </table>
 
 
+<%= link_to 'New Testgroup', new_testgroup_path(@testcase.id) %> |
 <%= link_to 'Edit', edit_testcase_path(@testcase) %> |
 <%= link_to 'Back', testcases_path %>
