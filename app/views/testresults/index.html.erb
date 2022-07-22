@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Test results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Result</th>
+      <th>Pass</th>
+      <th>Comment</th>
+      <th>Testgroup</th>
+      <th>Case</th>
+      <th>Action</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testresults.each do |testresult| %>
+      <tr>
+        <td><%= testresult.result %></td>
+        <td><%= testresult.pass %></td>
+        <td><%= testresult.comment %></td>
+        <td><%= testresult.testgroup_id %></td>
+        <td><%= testresult.case %></td>
+        <td><%= link_to 'Show', testresult %> |
+        <%= link_to 'Edit', edit_testresult_path(testresult) %> |
+        <%= link_to 'Destroy', testresult, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test result', new_testresult_path %>

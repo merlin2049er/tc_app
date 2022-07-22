@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  result: MyString
+  pass: false
+  comment: MyString
+  testgroup: 1
+  case: 1
+
+two:
+  result: MyString
+  pass: false
+  comment: MyString
+  testgroup: 1
+  case: 1

@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @testgroup.title %>
+</p>
+
+<p>
+  <strong>Test Case:</strong>
+  <%= @testgroup.case %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @testgroup.description %>
+</p>
+
+<p>
+  <strong>Steps:</strong>
+  <%= simple_format(@testgroup.steps) %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test Result</th>
+      <th>Pass</th>
+      <th>Comment</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |r| %>
+      <tr>
+        <td> <%= r.result  %></td>
+        <td> <%= r.pass %> </td>
+        <td> <%= r.comment %></td>
+        <td> <%= button_to "Update", edit_testresult_path, :method => "put" %>  </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Test results', new_testresult_path %> |
+
+<%= link_to 'Edit', edit_testgroup_path(@testgroup) %> |
+<%= link_to 'Back', testgroups_path %>

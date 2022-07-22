@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Test groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Test Case</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testgroups.each do |testgroup| %>
+      <tr>
+        <td><%= testgroup.title %></td>
+        <td><%= testgroup.case %></td>
+        <td><%= testgroup.description %></td>
+        <td><%= link_to 'Show', testgroup %></td>
+        <td><%= link_to 'Edit', edit_testgroup_path(testgroup) %></td>
+        <td><%= link_to 'Destroy', testgroup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test group', new_testgroup_path %><br>
+<%= link_to 'Back', testcases_path %>

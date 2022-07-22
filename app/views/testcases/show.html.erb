@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @testcase.id %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @testcase.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @testcase.description %>
+</p>
+
+<p>
+  <strong>Authored:</strong>
+  <%= mail_to @testcase.authored, @testcase.email  %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @testcase.version %>
+</p>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Case</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testgroup.each do |tg| %>
+      <tr>
+        <td> <%= tg.title  %></td>
+        <td> <%= tg.case %> </td>
+        <td> <%= tg.description %></td>
+        <td> <%= link_to 'Edit', edit_testgroup_path(tg.id) %> | <%= link_to 'Show', testgroup_path(tg.id) %> </td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New Testgroup', new_testgroup_path(@testcase.id) %> |
+<%= link_to 'Edit', edit_testcase_path(@testcase) %> |
+<%= link_to 'Back', testcases_path %>
