@@ -21,9 +21,12 @@
   <%= simple_format(@testgroup.steps) %>
 </p>
 
+<% if @results.present? %>
+
 <table>
   <thead>
     <tr>
+      <th>Updated at</th>
       <th>Test Result</th>
       <th>Pass</th>
       <th>Comment</th>
@@ -34,6 +37,7 @@
   <tbody>
     <% @results.each do |r| %>
       <tr>
+        <td> <%= r.updated_at  %></td>
         <td> <%= r.result  %></td>
         <td> <%= r.pass %> </td>
         <td> <%= r.comment %></td>
@@ -42,6 +46,9 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+  No Test Results...<br><br>
+<% end %>
 
 <%= link_to 'New Test results', new_testresult_path %> |
 

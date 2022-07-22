@@ -11,6 +11,11 @@
       <th>Title</th>
       <th>Description</th>
       <th>Authored</th>
+      <th>Modules</th>
+      <th>Results</th>
+      <th>Passed</th>
+      <th>Failed</th>
+      <th>Passed %</th>
       <th>Action</th>
 
 
@@ -27,8 +32,11 @@
         <td><%= testcase.title %></td>
         <td><%= testcase.description %></td>
         <td><%=  mail_to  testcase.authored, testcase.email %></td>
-
-
+        <td> <%=  Testgroup.where(testcase: testcase.id).count %> </td>
+        <td> <%= @total =Testresult.where(testgroup_id: testcase.id).count %> </td>
+        <td> <%= @passed =Testresult.where(testgroup_id: testcase.id , pass: true).count %> </td>
+        <td> <%= Testresult.where(testgroup_id: testcase.id , pass: false).count %> </td>
+        <td> <%= @pass_percentage =  ((@passed  / @total.to_f) *100).round(2) %> % </td>
         <td><%= link_to 'Show', testcase %> |
         <%= link_to 'Edit', edit_testcase_path(testcase) %> |
         <%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>

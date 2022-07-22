@@ -6,6 +6,7 @@
 <table>
   <thead>
     <tr>
+      <th>Updated</th>
       <th>Module</th>
       <th>Test Case</th>
       <th>Description</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @testgroups.each do |testgroup| %>
       <tr>
+        <td><%= testgroup.updated_at %></td>
         <td><%= testgroup.title %></td>
         <td><%= testgroup.case %></td>
         <td><%= testgroup.description %></td>

@@ -30,6 +30,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Module</th>
       <th>Case</th>
       <th>Description</th>
@@ -40,6 +41,7 @@
   <tbody>
     <% @testgroup.each do |tg| %>
       <tr>
+        <td> <%= tg.id  %></td>
         <td> <%= tg.title  %></td>
         <td> <%= tg.case %> </td>
         <td> <%= tg.description %></td>
@@ -50,6 +52,7 @@
     <% end %>
   </tbody>
 </table>
+
 
 
 <%= link_to 'New Testgroup', new_testgroup_path(@testcase.id) %> |

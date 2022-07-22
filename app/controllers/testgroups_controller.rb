@@ -8,8 +8,9 @@ class TestgroupsController < ApplicationController
 
   # GET /testgroups/1 or /testgroups/1.json
   def show
-    #@results = Testresult.where(testcase: params[:id])
-    @results = Testresult.all
+    @results = Testresult.where(testgroup: params[:id])
+    #@results = Testresult.all
+
   end
 
   # GET /testgroups/new
