@@ -4,6 +4,7 @@ class TestcasesController < ApplicationController
   # GET /testcases or /testcases.json
   def index
     @testcases = Testcase.all
+    @pagy, @testcases = pagy(Testcase.all)
   end
 
   # GET /testcases/1 or /testcases/1.json

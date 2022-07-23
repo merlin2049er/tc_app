@@ -4,6 +4,7 @@ class TestgroupsController < ApplicationController
   # GET /testgroups or /testgroups.json
   def index
     @testgroups = Testgroup.all
+    @pagy, @testgroups = pagy(Testgroup.all)
   end
 
   # GET /testgroups/1 or /testgroups/1.json
