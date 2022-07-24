@@ -1,5 +1,6 @@
 class TestresultsController < ApplicationController
   before_action :set_testresult, only: %i[ show edit update destroy ]
+  #before_action :authenticate_user!
 
   # GET /testresults or /testresults.json
   def index

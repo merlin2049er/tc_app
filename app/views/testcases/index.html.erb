@@ -19,7 +19,7 @@
       <th>Action</th>
 
 
-      <th colspan="3"></th>
+    
     </tr>
   </thead>
 
@@ -31,7 +31,7 @@
         <td><%= testcase.version %></td>
         <td><%= testcase.title %></td>
         <td><%= testcase.description %></td>
-        <td><%=  mail_to  testcase.authored, testcase.email %></td>
+        <td><%=  mail_to testcase.email, testcase.authored  %></td>
         <td> <%=  Testgroup.where(testcase: testcase.id).count %> </td>
         <td> <%= @total =Testresult.where(testgroup_id: testcase.id).count %> </td>
         <td> <%= @passed =Testresult.where(testgroup_id: testcase.id , pass: true).count %> </td>

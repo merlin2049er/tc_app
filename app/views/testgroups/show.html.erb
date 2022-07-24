@@ -25,12 +25,10 @@
 
 <table>
   <thead>
-    <tr>
+    <tr >
       <th>Updated at</th>
       <th>Test Result</th>
-      <th>Pass</th>
-      <th>Comment</th>
-      <th>Action</th>
+      <th>Pass  Comment  Action</th>
     </tr>
   </thead>
 
@@ -39,9 +37,12 @@
       <tr>
         <td> <%= r.updated_at  %></td>
         <td> <%= r.result  %></td>
-        <td> <%= r.pass %> </td>
-        <td> <%= r.comment %></td>
-        <td> <%= button_to "Update", edit_testresult_path, :method => "put" %>  </td>
+        <td> <form action="/action_page.php">
+            <input type="checkbox" id="pass" name="pass" value= <%= r.pass %>  >
+            <input type="text" id="comment"  name="pass" value= <%= r.comment %> >
+            <%= button_to "Update", edit_testresult_path, :method => "put" %>
+         </form>
+         </td>
       </tr>
     <% end %>
   </tbody>

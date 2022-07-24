@@ -17,7 +17,7 @@
 
 <p>
   <strong>Authored:</strong>
-  <%= mail_to @testcase.authored, @testcase.email  %>
+  <%= mail_to  @testcase.email, @testcase.authored  %>
 </p>
 
 <p>
@@ -52,8 +52,6 @@
     <% end %>
   </tbody>
 </table>
-
-
 
 <%= link_to 'New Testgroup', new_testgroup_path(@testcase.id) %> |
 <%= link_to 'Edit', edit_testcase_path(@testcase) %> |

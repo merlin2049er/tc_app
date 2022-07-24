@@ -1,5 +1,6 @@
 class TestgroupsController < ApplicationController
   before_action :set_testgroup, only: %i[ show edit update destroy ]
+  #before_action :authenticate_user!
 
   # GET /testgroups or /testgroups.json
   def index
@@ -10,13 +11,10 @@ class TestgroupsController < ApplicationController
   # GET /testgroups/1 or /testgroups/1.json
   def show
     @results = Testresult.where(testgroup: params[:id])
-    #@results = Testresult.all
-
   end
 
   # GET /testgroups/new
   def new
-    @testcase_id = 1 # dummy variable need to figure out how to pass variable from testcase id
     @testgroup = Testgroup.new
   end
 
