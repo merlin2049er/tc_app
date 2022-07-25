@@ -2,6 +2,14 @@
 
 <h1>Test cases</h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont %>
+  <%= f.submit %>
+<% end %>
+<div>Query returned <%= @count %> results </div>
+<br>
+
 <table >
   <thead>
     <tr>
@@ -19,7 +27,7 @@
       <th>Action</th>
 
 
-    
+
     </tr>
   </thead>
 

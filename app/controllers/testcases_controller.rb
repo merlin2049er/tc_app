@@ -4,8 +4,15 @@ class TestcasesController < ApplicationController
 
   # GET /testcases or /testcases.json
   def index
-    @testcases = Testcase.all
-    @pagy, @testcases = pagy(Testcase.all)
+  #  @testcases = Testcase.all
+  #  @pagy, @testcases = pagy(Testcase.all)
+
+  @q = Testcase.ransack(params[:q])
+  @testcases = @q.result(distinct: true)
+
+  @count = @testcases.count
+  @pagy, @testcases = pagy(@testcases)
+
   end
 
   # GET /testcases/1 or /testcases/1.json
